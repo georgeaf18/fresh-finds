@@ -1,0 +1,142 @@
+<form action="" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <div class="modal-header">
+    <h4 class="modal-title">
+      Editing
+      <span class="red"
+        >{{ product.product_name }} {{ product.price }}
+        {{ product.sold_by }}</span
+      >
+    </h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="activeModal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      <img [src]="product.picture" alt="" style="width: 200px" />
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <label for="">Product Name</label>
+
+          <input
+            formControlName="product_name"
+            type="text"
+            class="form-control"
+            placeholder="Ex: Bananas"
+            [ngClass]="{ 'is-invalid': submitted && f.product_name.errors }"
+          />
+          <small
+            *ngIf="submitted && f.product_name.errors"
+            class="text-danger d-block"
+            >Product name is required</small
+          >
+        </div>
+
+        <div class="col-md-2">
+          <label for="">Price</label>
+          <input
+            formControlName="price"
+            type="text"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.price.errors }"
+          />
+          <small *ngIf="submitted && f.price.errors" class="text-danger d-block"
+            >Price is required</small
+          >
+        </div>
+
+        <div class="col-md-2">
+          <label for="">Sold by</label>
+          <select formControlName="sold_by" name="" id="" class="form-control">
+            <option value="lb">LB</option>
+            <option value="each">Each</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="">Quantity in stock</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="quantity_in_stock"
+            [ngClass]="{
+              'is-invalid': submitted && f.quantity_in_stock.errors
+            }"
+          />
+          <small
+            *ngIf="submitted && f.quantity_in_stock.errors"
+            class="text-danger d-block"
+            >Quantity is required</small
+          >
+        </div>
+        <div class="col-md-2">
+          <label for="">Discount</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="discount"
+          />
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-2">
+          <label for="">SKU</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="SKU"
+            [ngClass]="{ 'is-invalid': submitted && f.SKU.errors }"
+          />
+          <small *ngIf="submitted && f.SKU.errors" class="text-danger d-block"
+            >SKU is required</small
+          >
+        </div>
+        <div class="col-md-4">
+          <label for="">Picture Link</label>
+          <input class="form-control" formControlName="picture" />
+        </div>
+        <div class="col-md-2">
+          <input type="checkbox" formControlName="featured" /> Mark Featured
+        </div>
+        <div class="col-md-2">
+          <input type="checkbox" formControlName="discount_available" /> Mark
+          Discounted
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          categories go here
+        </div>
+      </div>
+      <div class="row">
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="5"
+          placeholder="Enter Description"
+          class="form-control"
+          formControlName="description"
+        ></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn red-bg white px-5 py-2">
+      Update
+    </button>
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="activeModal.close('Close click')"
+    >
+      Close
+    </button>
+  </div>
+</form>

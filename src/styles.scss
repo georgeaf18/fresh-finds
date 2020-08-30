@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+.icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.red {
+  color: #fb3636;
+}
+
+.red-bg {
+  background-color: #fb3636 !important;
+}
+
+.white {
+  color: #fff !important;
+}
+
+.btn-round {
+  border-radius: 30px !important;
+}
+
+.btn-red {
+  background-color: #fb3636 !important;
+  color: #fff !important;
+}
+
+.btn-red:hover {
+  background-color: #fff !important;
+  color: #fb3636 !important;
+  border: #fb3636 solid 1px !important;
+}
+
+.form-control,
+.form-control:focus {
+  border: none !important;
+  border-bottom: #efefef solid 2px !important;
+  font-size: 1.3rem !important;
+  outline: none !important;
+}
+
+.link {
+  color: #fb3636 !important;
+}

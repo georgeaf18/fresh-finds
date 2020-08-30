@@ -1,0 +1,144 @@
+<div style="height: 100vh" id="outer-container">
+  <div class="w-100 d-flex justify-content-end">
+    <nav class="py-2">
+      <img src="../../assets/logo-transperant.png" alt="" />
+    </nav>
+  </div>
+
+  <div
+    class="row w-100 d-flex justify-content-center align-items-center "
+    style="height: calc(100% - 26px); margin-top: -66px"
+  >
+    <div class="h-100 col-6 d-flex align-items-end justify-content-start">
+      <div class="ml-3">
+        Image by
+        <a
+          class="link"
+          href="https://pixabay.com/users/JillWellington-334088/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2485051"
+          >Jill Wellington</a
+        >
+        from
+        <a
+          class="link"
+          href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2485051"
+          >Pixabay</a
+        >
+      </div>
+    </div>
+    <div class="col-6 d-flex justify-content-center">
+      <div class="w-75">
+        <div>
+          <h3 class="red">Create an account</h3>
+        </div>
+        <form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div>
+            <div class="row">
+              <div class="col-4">
+                <label for="">First Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Ex: John"
+                  formControlName="fname"
+                  [ngClass]="{ 'is-invalid': submitted && f.fname.errors }"
+                />
+              </div>
+              <div class="col-3">
+                <label for="">Middle Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Ex: Mark"
+                  formControlName="mname"
+                />
+              </div>
+              <div class="col-5">
+                <label for="">Last Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Ex: Doe"
+                  formControlName="lname"
+                  [ngClass]="{ 'is-invalid': submitted && f.lname.errors }"
+                />
+              </div>
+            </div>
+            <div>
+              <label for="">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Example: john.doe"
+                formControlName="username"
+                [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+              />
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <label for="">Password</label>
+                <div class="input-group">
+                  <input
+                    type="{{ hidePassword ? 'password' : 'text' }}"
+                    class="form-control"
+                    placeholder="Enter your password"
+                    formControlName="password"
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                  />
+                  <div class="input-group-append">
+                    <button
+                      class="btn btn-transparent"
+                      type="button"
+                      (click)="togglePassword()"
+                    >
+                      <i
+                        [ngClass]="{
+                          'fa-eye-slash': hidePassword,
+                          'fa-eye': !hidePassword
+                        }"
+                        class="fa "
+                      ></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <label for="">Confirm Password</label>
+                <div class="input-group">
+                  <input
+                    type="{{ hideConfirmPassword ? 'password' : 'text' }}"
+                    class="form-control"
+                    placeholder="Confirm your password"
+                    formControlName="confirmPassword"
+                    [ngClass]="{
+                      'is-invalid': submitted && f.confirmPassword.errors
+                    }"
+                  />
+                  <div class="input-group-append">
+                    <button
+                      (click)="toggleConfirmPassword()"
+                      class="btn btn-transparent"
+                      type="button"
+                    >
+                      <i
+                        [ngClass]="{
+                          'fa-eye-slash': hideConfirmPassword,
+                          'fa-eye': !hideConfirmPassword
+                        }"
+                        class="fa "
+                      ></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-3">
+              <button class="btn btn-red btn-round w-100">
+                Create Account
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

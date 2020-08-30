@@ -1,0 +1,39 @@
+<app-nav-bar></app-nav-bar>
+
+<h1>Inventory</h1>
+
+<div class="d-flex justify-content-between w-75 mx-auto">
+  <button class="btn btn-secondary btn-round">Delete</button>
+  <button class="btn btn-round red-bg white" (click)="openCreateNewProduct()">
+    New Product
+  </button>
+</div>
+<div class="mt-4">
+  <table class="table table-stripe">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>SKU</th>
+        <th>Available</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of inventory">
+        <td>{{ p.product_name }}</td>
+        <td>${{ p.price }} {{ p.sold_by }}</td>
+        <td>{{ p.SKU }}</td>
+        <td>{{ p.quantity_in_stock }}</td>
+        <td>
+          <button class="btn btn-primary btn-round mr-3" (click)="openEdit(p)">
+            Edit
+          </button>
+          <button class="btn btn-danger btn-round" (click)="hideProduct(p)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

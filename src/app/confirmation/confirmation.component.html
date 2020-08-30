@@ -1,0 +1,17 @@
+<div class="modal-body">
+  <p style="font-size: 1.3rem" class="red">
+    Are you sure you want to hide this product?
+  </p>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-danger px-5 py-2" (click)="delete()">
+    Delete
+  </button>
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="activeModal.close('Close click')"
+  >
+    Cancel
+  </button>
+</div>
