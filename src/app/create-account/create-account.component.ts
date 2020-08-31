@@ -50,13 +50,17 @@ export class CreateAccountComponent implements OnInit {
 
     this.data = {
       fname: this.form.get("fname").value,
-      mname: this.form.get("mname").value,
+      mname: this.form.get("mname").value || "",
       lname: this.form.get("lname").value,
       username: this.form.get("username").value,
       password: this.form.get("password").value
     };
 
     console.log(this.data);
+
+    this.api.createAccount(this.data).subscribe(res => {
+      console.log(res);
+    });
   };
 
   toggleConfirmPassword = () => {

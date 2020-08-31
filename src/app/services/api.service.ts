@@ -37,4 +37,8 @@ export class APIService {
   public getAllCustomers(): Observable<any> {
     return this.http.get(API_URL + "/customers");
   }
+
+  public createAccount(data): Observable<any> {
+    return this.http.post(API_URL + "/customers", data);
+  }
 }
