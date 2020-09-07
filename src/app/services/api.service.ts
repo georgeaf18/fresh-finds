@@ -12,7 +12,7 @@ const AUTH_HEADER = {
 
 @Injectable()
 export class APIService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   private handleError(error: Response | any) {
     return Observable.throw(error);
@@ -40,5 +40,9 @@ export class APIService {
 
   public createAccount(data): Observable<any> {
     return this.http.post(API_URL + "/customers", data);
+  }
+
+  public login(data): Observable<any> {
+    return this.http.post(API_URL + "/login/customer", data);
   }
 }

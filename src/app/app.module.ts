@@ -16,6 +16,7 @@ import { EditComponent } from "./edit/edit.component";
 import { ConfirmationComponent } from "./confirmation/confirmation.component";
 import { CustomersComponent } from './customers/customers.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     EditComponent,
     ConfirmationComponent,
     CustomersComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
   styleUrls: ["./new-product.component.scss"]
 })
 export class NewProductComponent implements OnInit {
-  constructor(private api: APIService, private formBuilder: FormBuilder) {}
+  constructor(private api: APIService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.productForm = this.formBuilder.group({

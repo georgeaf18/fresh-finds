@@ -6,6 +6,7 @@ import { InventoryComponent } from "./inventory/inventory.component";
 import { NewProductComponent } from "./new-product/new-product.component";
 import { CustomersComponent } from "./customers/customers.component";
 import { CreateAccountComponent } from "./create-account/create-account.component";
+import { NotFoundComponent } from "./not-found/not-found.component";
 
 const routes: Routes = [
   {
@@ -31,6 +32,14 @@ const routes: Routes = [
   {
     path: "create-account",
     component: CreateAccountComponent
+  },
+  {
+    path: "404",
+    component: NotFoundComponent
+  },
+  {
+    path: "**",
+    redirectTo: "/404"
   }
 ];
 

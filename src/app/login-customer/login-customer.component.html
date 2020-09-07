@@ -3,52 +3,44 @@
     <img src="../../assets/logo-transperant.png" alt="" />
   </nav>
 
-  <div
-    class="row w-100 d-flex justify-content-center align-items-center"
-    style="height: calc(100% - 26px); margin-top: -66px"
-  >
+  <div class="row w-100 d-flex justify-content-center align-items-center"
+    style="height: calc(100% - 26px); margin-top: -66px">
     <div class="col-6 d-flex justify-content-center">
       <div class="w-50">
         <div>
-          <p>Login</p>
+          <h3 class="red">Login</h3>
         </div>
-        <div>
+        <form action="" [formGroup]="form" (ngSubmit)="login()">
           <div>
-            <label for="">Username</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Example: john.doe"
-            />
+            <div>
+              <label for="">Username</label>
+              <input [ngClass]="{ 'is-invalid': submitted && f.username.errors }" formControlName="username" type="text"
+                class="form-control" placeholder="Example: john.doe" />
+              <small *ngIf="submitted && f.username.errors" class="text-danger d-block">Username is required</small>
+            </div>
+            <div>
+              <label for="">Password</label>
+              <input [ngClass]="{ 'is-invalid': submitted && f.password.errors }" formControlName="password" type="text"
+                class="form-control" placeholder="Enter your password" />
+              <small *ngIf="submitted && f.password.errors" class="text-danger d-block">Password is required</small>
+            </div>
+            <div class="mt-3 d-flex justify-content-center flex-wrap">
+              <button type="submit" class="btn btn-red btn-round w-100 shadow-none">Log in</button>
+              <small class="muted">Don't have an account? <a class="red link">Create one</a> </small>
+            </div>
           </div>
-          <div>
-            <label for="">Password</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Enter your password"
-            />
-          </div>
-          <div class="mt-3">
-            <button class="btn btn-red btn-round w-100">Log in</button>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
     <div class="h-100 col-6 d-flex align-items-end justify-content-end">
       <div>
         Image by
-        <a
-          class="link"
-          href="https://pixabay.com/users/JillWellington-334088/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2485051"
-          >Jill Wellington</a
-        >
+        <a class="link"
+          href="https://pixabay.com/users/JillWellington-334088/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2485051">Jill
+          Wellington</a>
         from
-        <a
-          class="link"
-          href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2485051"
-          >Pixabay</a
-        >
+        <a class="link"
+          href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2485051">Pixabay</a>
       </div>
     </div>
   </div>
