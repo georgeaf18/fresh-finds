@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   // API: "http://uat.wilsontechnologies.us/Wilson",
   API: "http://localhost:3000/api",
-  token: localStorage.getItem("token")
+  token: localStorage.getItem("nodeToken")
 };
 
 /*

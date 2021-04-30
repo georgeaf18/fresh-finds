@@ -17,6 +17,7 @@ import { ConfirmationComponent } from "./confirmation/confirmation.component";
 import { CustomersComponent } from './customers/customers.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ConfirmationComponent,
     CustomersComponent,
     CreateAccountComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CustomerProfileComponent
   ],
   imports: [
     BrowserModule,

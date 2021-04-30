@@ -1,0 +1,139 @@
+<app-nav-bar></app-nav-bar>
+<div>
+    <h3>Customer Profile</h3>
+
+    <div class="m-0 px-5 row">
+        <div class="col-md-6">
+            <section>
+                <div class="d-flex justify-content-between">
+                    <h5 class="red">Customer Information</h5>
+                    <p class="p-0 m-0 "><button class="btn btn-transparent red" (click)="edit = !edit"> <span
+                                class="red">Edit</span> </button></p>
+                </div>
+                <div class="row">
+                    <span class="col-md-3">Name:</span>
+                    <span *ngIf="!edit"> {{activeUser.fname}} {{activeUser.mname}}
+                        {{activeUser.lname}}</span>
+                    <div *ngIf="edit">
+                        <input placeholder="First Name" type="text" class="form-control" [(ngModel)]="activeUser.fname">
+                        <input placeholder="Middle Name" type="text" class="form-control"
+                            [(ngModel)]="activeUser.mname">
+                        <input placeholder="Last Name" type="text" class="form-control" [(ngModel)]="activeUser.lname">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <span class="col-md-3">Address:</span>
+                    <span *ngIf="!edit"> {{activeUser.street}} {{activeUser.city}}
+                        {{activeUser.state}}
+                        {{activeUser.zip_code}}</span>
+                    <div *ngIf="edit">
+                        <input placeholder="Street" type="text" class="form-control" [(ngModel)]="activeUser.street">
+                        <input placeholder="City" type="text" class="form-control" [(ngModel)]="activeUser.city">
+                        <input placeholder="State" type="text" class="form-control" [(ngModel)]="activeUser.state">
+                        <input placeholder="Zip Code" type="text" class="form-control"
+                            [(ngModel)]="activeUser.zip_code">
+                    </div>
+                </div>
+                <div class="mt-3" *ngIf="edit">
+                    <button class="btn btn-red btn-round w-100 shadow-none" (click)="updateCustomer()">Save
+                        Changes</button>
+                </div>
+            </section>
+            <section class="mt-5">
+                <div class="d-flex justify-content-between">
+                    <h5 class="red">Credit Card Information</h5>
+                    <p class="p-0 m-0 "><button class="btn btn-transparent red" (click)="edit_card = !edit_card"> <span
+                                class="red">Edit</span> </button></p>
+                </div>
+                <div *ngIf="edit_card" class="text-danger">DEMO PURPOSES ONLY. DO NOT ENTER REAL CREDIT CARD
+                    INFORMATION.</div>
+                <div class="row">
+                    <span class="col-md-4">Card Number:</span>
+                    <span *ngIf="!edit_card">{{card.card_number}}</span>
+                    <div class="col-md-8" *ngIf="edit_card">
+                        <input type="text" class="form-control w-100 d-inline" [(ngModel)]="card.card_number">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <span class="col-md-4">Name on Card:</span>
+                    <span *ngIf="!edit_card">{{card.name_on_card}}</span>
+                    <div *ngIf="edit_card">
+                        <input type="text" class="form-control" [(ngModel)]="card.name_on_card">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <span class="col-4">Expiration Date</span>
+                    <span *ngIf="!edit_card">{{card.exp_date}}</span>
+                    <select *ngIf="edit_card" name="" id="" class="form-control w-25" [(ngModel)]="exp_month">
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">
+                            03
+                        </option>
+                        <option value="04">
+                            04
+                        </option>
+                        <option value="05">
+                            05
+                        </option>
+                        <option value="06">
+                            06
+                        </option>
+                        <option value="07">
+                            07
+                        </option>
+                        <option value="08">
+                            08
+                        </option>
+                        <option value="09">
+                            09
+                        </option>
+                        <option value="10">
+                            10
+
+                        </option>
+                        <option value="11">
+
+                            11
+                        </option>
+                        <option value="12">
+
+                            12
+                        </option>
+                    </select>
+                    <select *ngIf="edit_card" name="" id="" class="form-control w-25" [(ngModel)]="exp_year">
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                    </select>
+                </div>
+                <div class="row mt-2">
+                    <span class="col-4">CVV</span>
+                    <span *ngIf="!edit_card">{{card.sec_code}}</span>
+                    <div *ngIf="edit_card">
+                        <input maxlength="4" type="text" class="form-control" [(ngModel)]="card.sec_code">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <span class="col-md-4">ZIP Code:</span>
+                    <span *ngIf="!edit_card">{{card.zip_code}}</span>
+                    <div *ngIf="edit_card">
+                        <input type="text" class="form-control" [(ngModel)]="card.zip_code">
+                    </div>
+                </div>
+                <div class="mt-3" *ngIf="edit_card">
+                    <button class="btn btn-red btn-round w-100 shadow-none" (click)="updateCreditCardInfo()">Save
+                        Changes</button>
+                </div>
+            </section>
+
+        </div>
+        <div class="col-md-6">
+            <h5 class="red">Past Orders</h5>
+        </div>
+    </div>
+</div>

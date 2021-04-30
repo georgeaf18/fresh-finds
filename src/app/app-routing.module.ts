@@ -7,6 +7,7 @@ import { NewProductComponent } from "./new-product/new-product.component";
 import { CustomersComponent } from "./customers/customers.component";
 import { CreateAccountComponent } from "./create-account/create-account.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
+import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
     component: CreateAccountComponent
   },
   {
+    path: "customer-profile",
+    component: CustomerProfileComponent
+  },
+  {
     path: "404",
     component: NotFoundComponent
   },
@@ -47,4 +52,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
